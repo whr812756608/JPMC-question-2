@@ -18,13 +18,13 @@ tensorflow==2.19.1
 ```
 ## Folder Structure
 
-All Part I code lives under Part 1/Code_w_unit_test/
+All Part I code lives under part 1/Code_w_unit_test/
 
-All unit tests are inside in Part 1/Code_w_unit_test/tests/.
+All unit tests are inside in part 1/Code_w_unit_test/tests/.
 ```
 .
 ├── requirements.txt
-└── Part 1/
+└── part 1/
     └── Code_w_unit_test/
         ├── EDH_LEDH_kernel_PFF_comparison_on_SSM.py   # Part 2C: EDH / LEDH / kernel PFF on SV-SSM
         ├── EKF_UKF.py                                 # EKF & UKF for nonlinear SSMs
@@ -96,13 +96,13 @@ pip install -r requirements.txt
 All Part I source code is inside:
 
 ```
-Part 1/Code_w_unit_test/
+part 1/Code_w_unit_test/
 ```
 
 Because the folder contains a space, use quotes when changing directory.
 
 ```
-cd "Part 1/Code_w_unit_test"
+cd "part 1/Code_w_unit_test"
 
 ```
 
@@ -126,10 +126,9 @@ python PF.py
 # EDH / LEDH / kernel PFF comparison on SV SSM 
 python EDH_LEDH_kernel_PFF_comparison_on_SSM.py
 
-# Kernel PFF demos (Hu 2021-style)
+# Kernel PFF demos (Hu 2021)
 python kernel_PFF_Hu_21.py
 ```
-
 
 Run All Unit Tests
 ```
