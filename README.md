@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ```
 ## Folder Structure
 
-All source scripts live in the main directory.
+All source scripts live in the part 1/code_w_unit_test.
 All unit tests live in tests/.
 
 ```
