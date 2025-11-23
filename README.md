@@ -3,14 +3,6 @@
 
 This repository implements the complete pipeline required in **Part 1** of the qusstion 2:
 
-1. **Classical filtering** for linear & nonlinear state-space models  
-2. **EKF/UKF/PF** for nonlinear & non-Gaussian SSMs  
-3. **Deterministic flows (EDH/LEDH)** and **kernel particle flows (Hu 2021)**  
-4. **Comparison experiments:** RMSE, ESS, flow magnitude, Jacobian conditioning  
-5. **Unit tests** for all major components  
-
-All code is implemented from scratch — **no TFP particle-filter or LGSSM shortcuts**.
-
 ---
 
 ## Requirements
