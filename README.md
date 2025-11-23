@@ -22,15 +22,15 @@ pip install -r requirements.txt
 ```
 ## Folder Structure
 
-All Part I code lives under Part1/code_w_unit_test/
+All Part I code lives under Part1/Code_w_unit_test/
 
-All unit tests are inside in Part1/code_w_unit_test/tests/.
+All unit tests are inside in Part1/Code_w_unit_test/tests/.
 
 ```
 .
 ├── requirements.txt
 └── Part 1/
-    └── code_w_unit_test/
+    └── Code_w_unit_test/
         ├── EDH_LEDH_kernel_PFF_comparison_on_SSM.py   # Part 2C: EDH / LEDH / kernel PFF on SV-SSM
         ├── EKF_UKF.py                                 # EKF & UKF for nonlinear SSMs
         ├── EKF_UKF_PF_comparison.py                   # EKF/ UKF/ PF comparison
@@ -84,7 +84,7 @@ All unit tests are inside in Part1/code_w_unit_test/tests/.
 
  cd into the Part I code directory
 ```
- cd Part1/code_w_unit_test
+ cd Part1/Code_w_unit_test
 ```
  run main scripts, e.g.
  ```
