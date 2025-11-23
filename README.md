@@ -16,3 +16,5 @@ pytest==8.4.2
 scipy==1.16.3
 tensorflow==2.19.1
 
+Install dependencies:
+
