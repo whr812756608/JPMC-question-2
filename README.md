@@ -1,7 +1,7 @@
 # Particle Flows for State-Space Models  
 ### Implementation for: **Part 1 – From classical filters to particle flows**
 
-This repository implements the complete pipeline required in **Part 1** of the assignment:
+This repository implements the complete pipeline required in **Part 1** of the qusstion 2:
 
 1. **Classical filtering** for linear & nonlinear state-space models  
 2. **EKF/UKF/PF** for nonlinear & non-Gaussian SSMs  
