@@ -22,23 +22,30 @@ pip install -r requirements.txt
 ```
 ## Folder Structure
 
-All source scripts live in the part 1/code_w_unit_test.
-All unit tests live in tests/.
+All Part I code lives under Part1/code_w_unit_test/
+
+All unit tests are inside in Part1/code_w_unit_test/tests/.
 
 ```
-├── EDH_LEDH_kernel_PFF_comparison_on_SSM.py   # Main experiment for Part 2C
-├── EKF_UKF.py                                 # EKF + UKF for nonlinear SSMs
-├── EKF_UKF_PF_comparison.py                   # EKF/UKF vs PF comparison
-├── PF.py                                      # Standard particle filter
-├── PFPF_Li_2017.py                            # Invertible PF-PF (Li 2017)
-├── kernel_PFF_Hu_21.py                        # Kernel embedded flow (Hu 2021)
-├── lgssm_kalman_tf.py                         # Kalman filter + LGSSM simulation
-└── sv_ssm.py                                  # Nonlinear Stochastic Volatility SSM
-└── tests/                                     # all unit test files
-    ├── test_lgssm_kalman.py
-    ├── test_EKF_UKF.py
-    ├── test_sv_ssm.py
-    └── ... (other unit tests)
+.
+├── requirements.txt
+└── Part 1/
+    └── code_w_unit_test/
+        ├── EDH_LEDH_kernel_PFF_comparison_on_SSM.py   # Part 2C: EDH / LEDH / kernel PFF on SV-SSM
+        ├── EKF_UKF.py                                 # EKF & UKF for nonlinear SSMs
+        ├── EKF_UKF_PF_comparison.py                   # EKF/ UKF/ PF comparison
+        ├── PF.py                                      # Baseline particle filter
+        ├── PFPF_Li_2017.py                            # Invertible PF-PF (Li, 2017)
+        ├── kernel_PFF_Hu_21.py                        # Kernel-embedded particle flow (Hu, 2021)
+        ├── lgssm_kalman_tf.py                         # LGSSM simulator + Kalman filter
+        ├── sv_ssm.py                                  # Stochastic volatility nonlinear SSM
+        └── tests/                                     # All unit tests for Part I
+            ├── test_lgssm_kalman_tf.py
+            ├── test_sv_ssm_and_pf.py
+            ├── test_ekf_ukf_pf_comparison.py
+            ├── test_edh_ledh_kernel_pff_sv.py
+            └── ...
+
 ```
 ## Script to each question
 
@@ -71,4 +78,23 @@ All unit tests live in tests/.
 | `tests/test_PFPF_Li_2017.py`                 | test files                |
 | `tests/test_kernel_PFF_Hu_21.py`                 | test files              |
 | `tests/test_EDH_LEDH_kernel_PFF_comparison_on_SSM.py`                 | test files                |
+
+
+ ## Run the main scripts and unit tests
+
+ cd into the Part I code directory
+```
+ cd Part1/code_w_unit_test
+```
+ run main scripts, e.g.
+ ```
+ python lgssm_kalman_tf.py
+ ```
+ run all unit tests
+
+ ```
+ pytest -q
+```
+
+
 
