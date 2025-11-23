@@ -34,7 +34,7 @@ All unit tests live in tests/.
 ├── kernel_PFF_Hu_21.py                        # Kernel embedded flow (Hu 2021)
 ├── lgssm_kalman_tf.py                         # Kalman filter + LGSSM simulation
 └── sv_ssm.py                                  # Nonlinear Stochastic Volatility SSM
-└── tests/                                     # all unit test
+└── tests/                                     # all unit test files
     ├── test_lgssm_kalman.py
     ├── test_EKF_UKF.py
     ├── test_sv_ssm.py
