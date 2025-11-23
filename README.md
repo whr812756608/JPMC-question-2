@@ -82,9 +82,18 @@ All unit tests are inside in Part1/Code_w_unit_test/tests/.
 
  ## Run the main scripts and unit tests
 
- cd into the Part I code directory
+ **We strongly recommend using a clean Conda environment to avoid binary incompatibility issues (NumPy / TensorFlow / h5py ABI conflicts).**
+ 
+ Create and activate the environment:
 ```
- cd Part1/Code_w_unit_test
+conda create -n jpmc_q2 python=3.12 -y
+conda activate jpmc_q2
+```
+Install required packages:
+```
+pip install -r requirements.txt
+```
+
 ```
  run main scripts, e.g.
  ```
