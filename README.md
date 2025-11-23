@@ -20,25 +20,44 @@ Install dependencies:
 ```
 pip install -r requirements.txt
 ```
-Folder Structure
+## Folder Structure
 
 All source scripts live in the main directory.
 All unit tests live in tests/.
 
 ```
-├── EDH_LEDH_kernel_PFF_comparison_on_SSM.py
-├── EDH_LEDH_kernel_PFF_comparison_on_SSM.py
-├── EDH_LEDH_kernel_PFF_comparison_on_SSM.py   # Part 1.3 experiment driver
-├── kernel_PFF_Hu_21.py                        # Kernel PFF implementation (Hu 2021)
-├── PFPF_Li_2017.py                            # EDH / LEDH flows (Li 2017)
-├── PF.py                                      # Bootstrap particle filter
-├── EKF_UKF_PF_comparison.py                   # EKF / UKF / PF comparison on SV-SSM
-├── sv_ssm.py                                  # Nonlinear SV state-space model
-├── EKF_UKF.py                                 # EKF and UKF implementations
-├── lgssm_kalman_tf.py                         # Linear-Gaussian SSM + Kalman filter
-└── tests/
+├── EKF_UKF.py                                 # EKF + UKF for nonlinear SSMs
+├── EKF_UKF_PF_comparison.py                   # EKF/UKF vs PF comparison
+├── EDH_LEDH_kernel_PFF_comparison_on_SSM.py   # Main experiment for Part 2C
+├── PF.py                                      # Standard particle filter
+├── PFPF_Li_2017.py                            # Invertible PF-PF (Li 2017)
+├── kernel_PFF_Hu_21.py                        # Kernel embedded flow (Hu 2021)
+├── lgssm_kalman_tf.py                         # Kalman filter + LGSSM simulation
+└── sv_ssm.py                                  # Nonlinear Stochastic Volatility SSM
+└── tests/                                     # all unit test
     ├── test_lgssm_kalman.py
     ├── test_kernel_PFF.py
     ├── test_sv_ssm_filters.py
     └── ... (other unit tests)
 ```
+## Script to each question
+
+I — Linear-Gaussian SSM + Kalman Filter
+| Script                       | Description                                                                                       |
+| ---------------------------- | ------------------------------------------------------------------------------------------------- |
+| `lgssm_kalman_tf.py`         | Problem a, b: LGSSM simulation + Kalman filter (no TFP). Joseph form, PSD checks, condition number diagnostics. |
+| `tests/test_lgssm_kalman.py` | test files                                     |
+
+
+| Script                         | Description                                                   |
+| ------------------------------ | ------------------------------------------------------------- |
+| `sv_ssm.py`                    | Problem a: Defines nonlinear/non-Gaussian stochastic volatility SSM.     |
+| `EKF_UKF.py`                   | Problem b: EKF and UKF implementations.                                  |
+| `PF.py`                        | Problem c: Bootstrap PF (systematic resampling).                         |
+| `EKF_UKF_PF_comparison.py`     | Problem d: Benchmarks EKF vs UKF vs PF (RMSE, ESS, degeneracy, runtime). |
+| `tests/test_sv_ssm_filters.py` | Unit tests for EKF/UKF/PF correctness.                        |
+| `tests/test_sv_ssm_filters.py` | Unit tests for EKF/UKF/PF correctness.                        |
+| `tests/test_sv_ssm_filters.py` | Unit tests for EKF/UKF/PF correctness.                        |
+| `tests/test_sv_ssm_filters.py` | Unit tests for EKF/UKF/PF correctness.                        |
+
+
