@@ -13,7 +13,7 @@ All code is implemented from scratch — **no TFP particle-filter or LGSSM short
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 Create a file named `requirements.txt`:
 
