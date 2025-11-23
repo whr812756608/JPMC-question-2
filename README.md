@@ -16,16 +16,11 @@ pytest==8.4.2
 scipy==1.16.3
 tensorflow==2.19.1
 ```
-Install dependencies:
-```
-pip install -r requirements.txt
-```
 ## Folder Structure
 
-All Part I code lives under Part1/Code_w_unit_test/
+All Part I code lives under Part 1/Code_w_unit_test/
 
-All unit tests are inside in Part1/Code_w_unit_test/tests/.
-
+All unit tests are inside in Part 1/Code_w_unit_test/tests/.
 ```
 .
 ├── requirements.txt
@@ -39,14 +34,18 @@ All unit tests are inside in Part1/Code_w_unit_test/tests/.
         ├── kernel_PFF_Hu_21.py                        # Kernel-embedded particle flow (Hu, 2021)
         ├── lgssm_kalman_tf.py                         # LGSSM simulator + Kalman filter
         ├── sv_ssm.py                                  # Stochastic volatility nonlinear SSM
+        ├── data_sv.npz                                # Precomputed SV trajectory (x_true, y_obs, params)
+        ├── ekf_ukf_results.npz                        # Precomputed EKF / UKF results on SV SSM
         └── tests/                                     # All unit tests for Part I
             ├── test_lgssm_kalman_tf.py
             ├── test_sv_ssm_and_pf.py
             ├── test_ekf_ukf_pf_comparison.py
             ├── test_edh_ledh_kernel_pff_sv.py
             └── ...
-
 ```
+
+
+
 ## Script to each question
 
 **1) I — Linear-Gaussian SSM + Kalman Filter**
@@ -84,7 +83,7 @@ All unit tests are inside in Part1/Code_w_unit_test/tests/.
 
  **We strongly recommend using a clean Conda environment to avoid binary incompatibility issues (NumPy / TensorFlow / h5py ABI conflicts).**
  
- Create and activate the environment:
+Create and activate the environment:
 ```
 conda create -n jpmc_q2 python=3.12 -y
 conda activate jpmc_q2
@@ -94,15 +93,47 @@ Install required packages:
 pip install -r requirements.txt
 ```
 
-```
- run main scripts, e.g.
- ```
- python lgssm_kalman_tf.py
- ```
- run all unit tests
+All Part I source code is inside:
 
- ```
- pytest -q
+```
+Part 1/Code_w_unit_test/
+```
+
+Because the folder contains a space, use quotes when changing directory.
+
+```
+cd "Part 1/Code_w_unit_test"
+
+```
+
+Run any main script, example commands:
+```
+# LGSSM + Kalman filter demos
+python lgssm_kalman_tf.py
+
+# SV SSM simulation
+python sv_ssm.py   # also regenerates data_sv.npz
+
+# EKF & UKF on SV SSM
+python EKF_UKF.py
+
+# EKF / UKF / PF comparison on SV SSM
+python EKF_UKF_PF_comparison.py   # also regenerates ekf_ukf_results.npz
+
+# Baseline PF on SV SSM
+python PF.py
+
+# EDH / LEDH / kernel PFF comparison on SV SSM 
+python EDH_LEDH_kernel_PFF_comparison_on_SSM.py
+
+# Kernel PFF demos (Hu 2021-style)
+python kernel_PFF_Hu_21.py
+```
+
+
+Run All Unit Tests
+```
+pytest -q
 ```
 
 
